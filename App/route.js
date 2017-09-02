@@ -16,15 +16,18 @@ import {Router,
 import MainView from './containers/mainview'
 import UpnaList from './components/upnalist'
 import Masa from './containers/masa'
+import PdfView from './containers/pdfview'
 
 export default class Route extends Component {
   render() {
     return (
       <Router key='root'
               hideNavBar={true}>
-          <Scene key='menu'
+          <Scene key='tabview'
                  initial={true}
-                 component={Masa}/>
+                 component={MainView}/>
+          <Scene key='pdfview'
+                 component={PdfView}/>
       </Router>
     )
   }

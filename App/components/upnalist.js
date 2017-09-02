@@ -7,29 +7,33 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-
+import {Actions, Scene} from 'react-native-router-flux'
 export default class UpnaList extends Component {
   constructor(props) {
     super(props)
     //this.renderTitle = this.renderTitle.bind(this)
   }
-  _renderItem = ({item}) => {
+  _renderItem = ({item, index}) => {
     return (
-      <TouchableOpacity onPress={() => console.log(item.key)}
+      <TouchableOpacity onPress={() => Actions.pdfview({pdfData: this.props.pdfData, index: index})}
+                        activeOpacity={0.7}
                         style={styles.item}>
-        <Text>{item}</Text>
+        <Text style={styles.itemTxt}>{item}</Text>
       </TouchableOpacity>
     )
   }
   render() {
+    const header = (
+      <View style={styles.titleView}>
+        <Text style={styles.titleText}>{this.props.title}</Text>
+      </View>
+    )
     return (
       <View style={styles.container}>
-        <View style={styles.titleView}>
-          <Text style={styles.titleText}></Text>
-        </View>
         <FlatList
           data={this.props.listData}
           renderItem={this._renderItem}
+          ListHeaderComponent={header}
         />
       </View>
 
@@ -42,15 +46,32 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   item: {
-    margin: 5,
-    borderColor: 'blue',
-    borderWidth: 3,
-    borderRadius: 40,
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 3,
+    marginBottom: 3,
+    paddingLeft: 20,
+    padding: 15,
+    backgroundColor: '#2980b9',
+    borderRadius: 7,
+  },
+  itemTxt: {
+    fontFamily: 'Times New Roman',
+    fontSize: 17,
+    fontWeight: '500',
+    color: '#ecf0f1',
   },
   titleView: {
+    marginTop: 30,
+    marginBottom: 10,
+    margin: 20,
     alignItems: 'center',
   },
   titleText: {
+    fontFamily: 'Times New Roman',
+    fontSize: 17,
+    fontWeight: '800',
+    color: '#2c3e50',
     textAlign: 'center',
   }
 })

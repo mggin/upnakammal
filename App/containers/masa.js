@@ -12,6 +12,7 @@ import {
 
 import UpnaList from '../components/upnalist'
 import { masaArray } from '../arrays'
+import { masaPdfArray } from '../assets/pdf/KHEN_MASA'
 
 export default class Route extends Component {
   render() {
@@ -19,6 +20,8 @@ export default class Route extends Component {
       <View style={styles.container}>
         <UpnaList
           listData={masaArray}
+          pdfData={masaPdfArray}
+          title='PAWLPI LEH KIPAWLNA'
         />
       </View>
     )

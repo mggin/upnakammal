@@ -12,6 +12,7 @@ import {
 
 import UpnaList from '../components/upnalist'
 import { linaArray } from '../arrays'
+import { linaPdfArray } from '../assets/pdf/KHEN_LINA'
 
 export default class Route extends Component {
   render() {
@@ -19,6 +20,8 @@ export default class Route extends Component {
       <View style={styles.container}>
         <UpnaList
           listData={linaArray}
+          pdfData={linaPdfArray}
+          title='MARIA, LAISIANGTHO LEH KHA ADING THUNGETNA TAWMKHA'
         />
       </View>
     )

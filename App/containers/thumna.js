@@ -12,6 +12,7 @@ import {
 
 import UpnaList from '../components/upnalist'
 import { thumnaArray } from '../arrays'
+import { thumnaPdfArray } from '../assets/pdf/KHEN_THUMNA'
 
 export default class Route extends Component {
   render() {
@@ -19,6 +20,8 @@ export default class Route extends Component {
       <View style={styles.container}>
         <UpnaList
           listData={thumnaArray}
+          pdfData={thumnaPdfArray}
+          title='NISIM CHRISTIAN NUNTAKNA'
         />
       </View>
     )
