@@ -5,7 +5,7 @@ export const masaArray = ['Catholic: Bucing Christian Upna tawh Kisai',
                           'Pasian Minam',
                           'Siadaw Ukgam (Diocese)',
                           'Siadaw Ukgam (2)',
-                          'SIAMPI LEH NASEP',
+                          'Siampi leh Nasep',
                           'Parish i cih in banghiam?',
                           'Thuzuite Kipawlna Tuamtuam',
                           'Pawlpi le Kipawlna']
